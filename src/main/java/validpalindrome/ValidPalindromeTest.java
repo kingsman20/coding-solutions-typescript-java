@@ -2,14 +2,23 @@ package validpalindrome;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ValidPalindromeTest {
+    ValidPalindrome validPalindrome = new ValidPalindrome();
 
     @Test
-    public void testAdd() {
-        ValidPalindrome calculator = new ValidPalindrome();
-        int sum = calculator.add(2, 3);
-        assertEquals(5, sum, "2 + 3 should equal 5");
+    public void testIsAValidPalindrome() {
+        String strOne = "racecar";
+        boolean isAPalindromeOne = validPalindrome.isAPalindromeUsingTwoPointers(strOne);
+        assertTrue(isAPalindromeOne);
+    }
+
+    @Test
+    public void testIsNotAValidPalindrome() {
+        String strOne = "racaecar";
+        boolean isAPalindromeOne = validPalindrome.isAPalindromeUsingTwoPointers(strOne);
+        assertFalse(isAPalindromeOne);
     }
 }
